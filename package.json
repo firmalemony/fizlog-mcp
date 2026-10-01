@@ -1,0 +1,47 @@
+{
+  "name": "fizlog-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Fizlog — let AI assistants publish changelog entries and read your public changelog.",
+  "license": "MIT",
+  "author": "Lemony Apps <support@fizlog.com>",
+  "homepage": "https://fizlog.com",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "changelog",
+    "release-notes",
+    "fizlog",
+    "claude",
+    "cursor"
+  ],
+  "type": "module",
+  "bin": {
+    "fizlog-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "smoke": "node scripts/smoke.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.31.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "typescript": "^7.0.2"
+  },
+  "mcpName": "io.github.firmalemony/fizlog-mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/firmalemony/fizlog-mcp"
+  }
+}
