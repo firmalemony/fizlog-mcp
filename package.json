@@ -1,6 +1,6 @@
 {
   "name": "fizlog-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server for Fizlog — let AI assistants publish changelog entries and read your public changelog.",
   "license": "MIT",
   "author": "Lemony Apps <support@fizlog.com>",
@@ -29,7 +29,8 @@
   "scripts": {
     "build": "tsc",
     "smoke": "node scripts/smoke.mjs",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && node --test test/client.test.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.31.0",

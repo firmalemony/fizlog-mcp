@@ -65,7 +65,7 @@ server.registerTool(
       public_key: z.string().trim().min(1).max(64).optional().describe("Project public key. Defaults to FIZLOG_PUBLIC_KEY."),
       limit: z.number().int().min(1).max(MAX_ENTRIES_RETURNED).default(10),
     },
-    annotations: { readOnlyHint: true, openWorldHint: true },
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
   },
   async ({ public_key, limit }) => {
     const key = public_key ?? defaultPublicKey;
